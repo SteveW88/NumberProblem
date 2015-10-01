@@ -1,0 +1,71 @@
+////// BEGIN Addition TEST //////////
+
+Expected: 4     Result: 4
+Expected: 6     Result: 6
+Expected: 8/2   Result: 8/2
+Expected: 3/4   Result: 3/4
+Expected: 10    Result: 10
+Expected: 10/1  Result: 10/1
+Expected: 10/1  Result: 10/1
+Expected: 19/4  Result: 19/4
+Expected: 19/4  Result: 19/4
+Expected: 5 (19/4 as int)  Result: 5
+
+Unknown Return Type test
+Expected: 10    Result: 10
+Expected: 19/4  Result: 19/4
+Expected: 89/2  Result: 89/2
+
+Sum of 10,10,10,19/4,19/4
+Expected: 89/2  Result: 89/2
+
+Shared Pointer Testing
+Expected: 59/4  Result: 59/4
+Expected: 15    Result: 15
+Expected: 59/4  Result: 59/4
+
+pointer bool test check
+
+Ultra Total Testing
+Expected: 89/1  Result: 89/1
+Expected: 89    Result: 89
+Expected: 89/1  Result: 89/1
+
+////// End Addition TEST //////////
+
+////// BEGIN BOOL TEST //////////
+
+Test Integer lhs, variable rhs
+int==int
+int!=int
+int==wholefrac
+int!=frac
+int==expr
+int!=expr
+
+Test variable rhs, Integer lhs
+int==int
+int!=int
+wholefrac==int
+frac!=int
+expr==int
+expr!=int
+
+Test Fraction lhs, variable rhs
+frac==int
+frac!=int
+frac!=frac
+frac==frac
+frac==expr
+frac!=expr
+
+Test variable lhs, Fraction rhs
+int==frac
+int!=frac
+frac!=frac
+frac==frac
+expr==frac
+expr!=frac
+
+////// END BOOL TEST //////////
+

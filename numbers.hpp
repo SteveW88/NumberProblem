@@ -94,7 +94,7 @@ public:
 //     o determine if fraction is a whole number -- IsInt()
 //
 class Fraction : public Number {
-protected:
+private:
 
   int mTop;  // Numerator
   int mBot;  // Denominator
@@ -147,6 +147,9 @@ bool operator==(const std::shared_ptr<Number> & lhs, const Number & rhs);
 std::shared_ptr<Number> operator+(const Number & lhs, const std::shared_ptr<Number> & rhs);
 bool operator==(const Number & lhs, const std::shared_ptr<Number> & rhs);
 
+// cast both lhs and rhs shared_ptr to number reference
+std::shared_ptr<Number> operator+(const std::shared_ptr<Number> & lhs, const std::shared_ptr<Number> & rhs);
+bool operator==(const std::shared_ptr<Number> & lhs, const std::shared_ptr<Number> & rhs);
 
 ///
 // Sum()

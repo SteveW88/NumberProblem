@@ -175,7 +175,12 @@ void Fraction::Display() const{
 // Compares Integer.Value() to converted Integer.Value()
 //
 bool Integer::operator==(const Number & rhs) const{
-  return (Value() == rhs.To_Integer().Value());
+  switch(rhs.Type()){
+  case cInt:
+    return (Value() == rhs.To_Integer().Value());
+  case cFrac:
+    return (To_Fraction() == rhs.To_Fraction());
+  }
 }
 
 
@@ -211,6 +216,11 @@ bool operator==(const Number & lhs, const std::shared_ptr<Number> & rhs){
   return (lhs == rhs_ref);
 }
 
+// both sides
+bool operator==(const std::shared_ptr<Number> & lhs, const std::shared_ptr<Number> & rhs){
+  Number & lhs_ref = *lhs;
+  return (lhs_ref == rhs);
+}
 
 //**********//
 
@@ -272,10 +282,16 @@ std::shared_ptr<Number> operator+(const std::shared_ptr<Number> & lhs, const Num
   return (lhs_ref + rhs);
 }
 
-//rhs
+// rhs
 std::shared_ptr<Number> operator+(const Number & lhs, const std::shared_ptr<Number> & rhs){
   Number & rhs_ref = *rhs;
   return (lhs + rhs_ref);
+}
+
+// both sides
+std::shared_ptr<Number> operator+(const std::shared_ptr<Number> & lhs, const std::shared_ptr<Number> & rhs){
+  Number & lhs_ref = *lhs;
+  return (lhs_ref + rhs);
 }
 
 //**********//

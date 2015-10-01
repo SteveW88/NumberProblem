@@ -1,5 +1,5 @@
 CPP=g++
-FLAGS=
+FLAGS=-g -std=c++11
 
 OUT_EXEC = main
 objects  = numbers.o main.o
